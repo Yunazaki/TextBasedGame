@@ -10,6 +10,8 @@ string inventory[10];
 string weapon = "Fist";
 string armor = " ";
 string quest[5] = { "Defeat the Slime King", "Defeat the Kraken", "Defeat Ainz Ooal Gown", "Slay the Dragon", "Slay the Demon King" };
+string playerOccupation = "Civilian";
+string playerName = "Player";
 bool questTrue[5] = { FALSE, FALSE, FALSE, FALSE, FALSE };
 
 int level = 1;
@@ -20,9 +22,13 @@ int kol = 0; //currency
 int slimeSecretion = 0;
 int skeletonsKilled = 0;
 
+int lives = 3;
+int health = 100;
+
 int area = 1;
 int turns = 0;
 bool respawn = FALSE;
+
 
 int main()
 {

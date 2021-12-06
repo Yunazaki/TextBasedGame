@@ -52,12 +52,16 @@ void checkQuest()
 void help()
 {
 
-	cout << "| The commands available to you are:" << endl;
+	cout << endl;
+	cout << "| The commands available for general exploration are:" << endl;
 	cout << "| go (direction)" << endl;
 	cout << "| go through (something)" << endl;
 	cout << "| go into (place)" << endl;
 	cout << "| inventory" << endl;
 	cout << "| quest" << endl;
 	cout << "| pick up (item)" << endl;
-
+	cout << endl;
+	cout << "-----------------------------------------------" << endl << endl;
+	cout << "| The commands available for combat are:" << endl;
+ 
 }

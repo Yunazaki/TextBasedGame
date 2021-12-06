@@ -32,6 +32,14 @@ extern int health;
 extern int turns;
 extern bool respawn;
 
+class monsterDrop
+{
+
+public:
+
+	int quantity;
+
+};
 
 void masadoraGameWindow();
 
