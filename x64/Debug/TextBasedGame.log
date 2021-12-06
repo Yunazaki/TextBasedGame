@@ -1,0 +1,13 @@
+﻿  battle.cpp
+D:\Users\Yuna\Documents\School Stuff\CEC CompGameDesign\TextBasedGame\TextBasedGame\battle.cpp(201,12): warning C4552: '*': result of expression not used
+  game.cpp
+D:\Users\Yuna\Documents\School Stuff\CEC CompGameDesign\TextBasedGame\TextBasedGame\game.cpp(14,8): error C2371: 'quest': redefinition; different basic types
+D:\Users\Yuna\Documents\School Stuff\CEC CompGameDesign\TextBasedGame\TextBasedGame\functions.h(17): message : see declaration of 'quest'
+D:\Users\Yuna\Documents\School Stuff\CEC CompGameDesign\TextBasedGame\TextBasedGame\game.cpp(43,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  gameWindows.cpp
+  inventory.cpp
+  locations.cpp
+D:\Users\Yuna\Documents\School Stuff\CEC CompGameDesign\TextBasedGame\TextBasedGame\locations.cpp(99,38): error C2440: '=': cannot convert from 'const char [22]' to 'int'
+D:\Users\Yuna\Documents\School Stuff\CEC CompGameDesign\TextBasedGame\TextBasedGame\locations.cpp(99,15): message : There is no context in which this conversion is possible
+  npc.cpp
+  Generating Code...

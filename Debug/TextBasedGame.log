@@ -1,0 +1,5 @@
+﻿  npc.cpp
+  game.cpp
+D:\Users\Yuna\Documents\School Stuff\CEC CompGameDesign\TextBasedGame\TextBasedGame\game.cpp(45,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  TextBasedGame.vcxproj -> D:\Users\Yuna\Documents\School Stuff\CEC CompGameDesign\TextBasedGame\Debug\TextBasedGame.exe
