@@ -24,6 +24,7 @@ int skeletonsKilled = 0;
 
 int lives = 3;
 int health = 100;
+int mana = 100;
 
 int area = 1;
 int turns = 0;
@@ -68,27 +69,7 @@ int main()
 		cout << endl << endl;
 		turns++;
 
-		if (input.compare("inventory") == 0)
-		{
-			checkInventory();
-			cout << endl;
-			system("pause");
-			cout << "-----------------------------------------------" << endl;
-		}
-		if (input.compare("quest") == 0)
-		{
-			checkQuest();
-			cout << endl;
-			system("pause");
-			cout << "-----------------------------------------------" << endl;
-		}
-		if (input.compare("help") == 0)
-		{
-			help();
-			cout << endl;
-			system("pause");
-			cout << "-----------------------------------------------" << endl;
-		}
+		commands(input);
 
 		switch (area)
 		{
@@ -353,9 +334,14 @@ int main()
 			{
 				if (respawn == TRUE)
 				{
-					cout << "You have healed to full health!" << endl
-						<< endl;
+					cout << "You have healed to full health!" << endl;
 					health = 100;
+					if (playerOccupation.compare("Mage") == 0)
+					{
+						cout << "You're mana has also been restored!" << endl;
+						mana = 100;
+					}
+
 					system("pause");
 				}
 				if (respawn != TRUE)
@@ -571,10 +557,6 @@ int main()
 			{
 				area = 19;
 			}
-			else if (input.compare("inventory") == 0)
-			{
-				checkInventory();
-			}
 			else
 			{
 				cout << "Sorry, doesn't seem like that's an option\n\n";
@@ -601,10 +583,6 @@ int main()
 			{
 				area = 20;
 			}
-			else if (input.compare("inventory") == 0)
-			{
-				checkInventory();
-			}
 			else
 			{
 				cout << "Sorry, doesn't seem like that's an option\n\n";
@@ -630,10 +608,6 @@ int main()
 			else if (input.compare("go south") == 0)
 			{
 				area = 19;
-			}
-			else if (input.compare("inventory") == 0)
-			{
-				checkInventory();
 			}
 			else
 			{
@@ -665,10 +639,6 @@ int main()
 			{
 				area = 20;
 			}
-			else if (input.compare("inventory") == 0)
-			{
-				checkInventory();
-			}
 			else
 			{
 				cout << "Sorry, doesn't seem like that's an option\n\n";
@@ -695,10 +665,6 @@ int main()
 			else if (input.compare("go south") == 0)
 			{
 				area = 15;
-			}
-			else if (input.compare("inventory") == 0)
-			{
-				checkInventory();
 			}
 			else
 			{
@@ -749,10 +715,6 @@ int main()
 					cout << "The altar doesn't seem to currently do anything.\n\n";
 				}
 			}
-			else if (input.compare("inventory") == 0)
-			{
-				checkInventory();
-			}
 			else
 			{
 				cout << "Sorry, doesn't seem like that's an option\n\n";
@@ -783,10 +745,6 @@ int main()
 			{
 				area = 8;
 			}
-			else if (input.compare("inventory") == 0)
-			{
-				checkInventory();
-			}
 			else
 			{
 				cout << "Sorry, doesn't seem like that's an option\n\n";
@@ -812,10 +770,6 @@ int main()
 			else if (input.compare("go east") == 0)
 			{
 				area = 24;
-			}
-			else if (input.compare("inventory") == 0)
-			{
-				checkInventory();
 			}
 			else
 			{
@@ -1269,6 +1223,43 @@ int main()
 			{
 				tombOfNazarik(skeletonsKilled);
 			}
+
+			break;
+
+		case 44:
+
+			forestGameWindow();
+			cout << "You find yourself in a forest.\n";
+			if (level < 5)
+			{
+				cout << "A bright purple light starts to become visible to your West.\n";
+			}
+			cout << "You can go North or West\n\n";
+
+			cout << "> ";
+			getline(cin, input);
+			cout << endl;
+
+			if (input.compare("go north") == 0)
+			{
+				area = 28;
+			}
+			if (input.compare("go west") == 0)
+			{
+				area = 45;
+			}
+
+			break;
+
+		case 45:
+
+			portalGameWindow();
+			cout << "You climb up a small hill and a huge crater starts to come into sight.\n";
+
+			cout << endl;
+			cout << "> ";
+			getline(cin, input);
+			cout << endl;
 
 			break;
 

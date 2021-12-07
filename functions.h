@@ -18,6 +18,7 @@ extern string armor;
 extern string quest[5];
 extern bool questTrue[5];
 
+
 extern int level;
 extern int levelBar;
 extern int levelCounter;
@@ -29,17 +30,11 @@ extern int skeletonsKilled;
 extern int area;
 extern int lives;
 extern int health;
+extern int mana;
 extern int turns;
 extern bool respawn;
 
-class monsterDrop
-{
-
-public:
-
-	int quantity;
-
-};
+extern char maps[8][16];
 
 void masadoraGameWindow();
 
@@ -49,11 +44,17 @@ void slimeGameWindow();
 
 void seaGameWindow();
 
+void portalGameWindow();
+
+void commands(string);
+
 void checkInventory();
 
 void checkQuest();
 
 void help();
+
+void map();
 
 void monsterGenerator(int);
 

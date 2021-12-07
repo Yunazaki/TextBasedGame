@@ -40,3 +40,14 @@ void seaGameWindow()
 	system("COLOR 17");
 
 }
+
+void portalGameWindow()
+{
+
+	LPCWSTR a = L"Portal";
+	LPCSTR b = "Portal";
+	SetConsoleTitle(a);
+
+	system("COLOR 0D");
+
+}

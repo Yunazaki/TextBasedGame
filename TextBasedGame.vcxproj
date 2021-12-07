@@ -140,11 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="battle.cpp" />
-    <ClCompile Include="classes.cpp" />
     <ClCompile Include="commands.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameWindows.cpp" />
     <ClCompile Include="locations.cpp" />
+    <ClCompile Include="map.cpp" />
     <ClCompile Include="npc.cpp" />
   </ItemGroup>
   <ItemGroup>

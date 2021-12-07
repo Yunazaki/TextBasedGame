@@ -36,6 +36,22 @@ void npcGenerator(int npc)
 					cout << "| I heard you have to defeat some smaller little slimes first before you can summon the Slime King." << endl;
 					cout << "| Good luck trying to defeat him!" << endl << endl;
 				}
+				else if (questTrue[1] == TRUE)
+				{
+					cout << "| That slimey Kraken?!" << endl;
+					cout << "| Good luck trying to battle the Kraken in rough waters." << endl;
+					if (inventory[4].compare("Boat") != 0)
+					{
+						cout << "| I heard you need a boat to get onto rough waters though so make sure you got some Kol on you to buy one." << endl;
+						if (kol <= 25)
+						{
+							cout << "| If you don't have enough Kol," << endl;
+							cout << "| There are some wolves southeast of Masadora." << endl;
+							cout << "| Look for the area with some visible claw marks and you'll probably run into one." << endl;
+						}
+					}
+					cout << endl;
+				}
 
 			}
 			else if (playerOccupation != "Knight" || playerOccupation != "Mage" || playerOccupation != "Assassin")

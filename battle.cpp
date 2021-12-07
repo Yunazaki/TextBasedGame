@@ -4,7 +4,6 @@ void battle(int monsterhealth, string monster)
 {
 
 	int playerDamage = rand() % 2 + 1;
-	int mana = 100;
 	int manaCost;
 	int monsterDamage;
 	string input;
@@ -95,7 +94,7 @@ void battle(int monsterhealth, string monster)
 			if (armor.compare("Leather Robe") == 0)
 			{
 				playerDamage *= 1.15;
-				mana += 10;
+				mana = 110;
 			}
 			if (armor.compare("Wolf Hide") == 0)
 			{
@@ -139,7 +138,7 @@ void battle(int monsterhealth, string monster)
 				{
 					if (mana <= 0)
 					{
-						cout << "You have no mana to cast anything!" << endl;
+						cout << "You have no mana to cast anything!" << endl << endl;
 					}
 					else if (weapon.compare("Ruby Gem Staff") == 0)
 					{
