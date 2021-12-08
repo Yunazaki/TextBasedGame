@@ -161,10 +161,17 @@ void npcGenerator(int npc)
 		{
 			cout << "2.) Damage Potion [15 Kol] [+5 DAMAGE]" << endl;
 		}
-		if (inventory[3].compare("Agility Potion") != 0)
+		if (inventory[3].compare("Agility Potion") != 0 && playerOccupation.compare("Mage") != 0)
 		{
 			cout << "3.) Agility Potion [15 Kol] [25% MONSTER MISS CHANCE] [-25% MISS CHANCE]" << endl;
 		}
+		if (inventory[3].compare("Mana Potion") != 0 && playerOccupation.compare("Mage") == 0)
+		{
+			cout << "3.) Mana Potion [10 Kol] [+50 Mana]" << endl;
+		}
+
+		cout << endl;
+		cout << "Input leave to leave" << endl;
 
 		break;
 
@@ -184,6 +191,9 @@ void npcGenerator(int npc)
 			}
 
 			cout << "| Sorry but it doesn't seem like your level is high enough to buy any of my products." << endl;
+
+			cout << endl;
+			cout << "Input leave to leave" << endl;
 		}
 
 		if (level >= 2)
@@ -218,6 +228,9 @@ void npcGenerator(int npc)
 				}
 
 			}
+
+			cout << endl;
+			cout << "Input leave to leave" << endl;
 		}
 
 		break;
@@ -236,6 +249,9 @@ void npcGenerator(int npc)
 				cout << "| Maybe come back when you're able to call yourself an Adventurer." << endl;
 			}
 			cout << "| Sorry but it doesn't seem like your level is high enough to buy any of my products." << endl;
+
+			cout << endl;
+			cout << "Input leave to leave" << endl;
 		}
 
 		if (level >= 2)
@@ -270,6 +286,9 @@ void npcGenerator(int npc)
 				}
 
 			}
+
+			cout << endl;
+			cout << "Input leave to leave" << endl;
 		}
 
 		break;

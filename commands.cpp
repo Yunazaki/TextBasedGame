@@ -111,7 +111,7 @@ void help()
 	cout << "| If you get lost on a quest and don't know what you need to do" << endl;
 	cout << "| Try to find the NPC 'Rimuru' who should be roaming around Masadora." << endl;
 	cout << endl;
- 
+
 }
 
 void map() {

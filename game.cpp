@@ -36,7 +36,7 @@ int main()
 
 	LPCWSTR a = L"The Typical Isekai";
 	LPCSTR b = "The Typical Isekai";
-	SetConsoleTitle(a);
+	SetConsoleTitle(b);
 
 	HWND console = GetConsoleWindow();
 	RECT r;
@@ -49,7 +49,8 @@ int main()
 	srand(time(NULL));
 
 	string input;
-	bool first = false;
+
+	bool first = true;
 
 	do
 	{
@@ -67,6 +68,7 @@ int main()
 				<< "     " << "Lives: " << lives;
 		}
 		cout << endl << endl;
+
 		turns++;
 
 		commands(input);
@@ -80,6 +82,8 @@ int main()
 			if (weapon.compare("Wooden Sword") != 0)
 			{
 				cout << "You find a Wooden Sword next to you.\n";
+				cout << "You can pick up the Wooden Sword\n";
+				cout << "OR\n";
 			}
 
 			cout << "You can go North\n\n";
@@ -1157,6 +1161,8 @@ int main()
 			monsterGenerator(5);
 
 			cout << "You walk through a field of graveyards.\n";
+
+			cout << endl;
 			cout << "You can go North or West.\n";
 
 			cout << "> ";
@@ -1179,6 +1185,8 @@ int main()
 			cout << "You're on a pathway within the graveyard.\n";
 			cout << "Fog starts to grow around this area.\n";
 			cout << "You start to see a stone structure past the fog towards East.\n";
+
+			cout << endl;
 			cout << "You can go North or West or East or South\n\n";
 
 			cout << "> ";
@@ -1207,6 +1215,8 @@ int main()
 		case 43:
 
 			cout << "You stand in front of a monument named 'The Great Tomb of Nazarik'\n";
+
+			cout << endl;
 			cout << "You can go into the Tomb\n";
 			cout << "OR\n";
 			cout << "You can go West\n\n";
@@ -1234,6 +1244,8 @@ int main()
 			{
 				cout << "A bright purple light starts to become visible to your West.\n";
 			}
+
+			cout << endl;
 			cout << "You can go North or West\n\n";
 
 			cout << "> ";
@@ -1257,9 +1269,23 @@ int main()
 			cout << "You climb up a small hill and a huge crater starts to come into sight.\n";
 
 			cout << endl;
+			cout << "You can go back East\n";
+			cout << "OR\n";
+			cout << "Go towards the center of the crater by going West\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
+
+			if (input.compare("go west") == 0)
+			{
+				area = 49;
+			}
+			if (input.compare("go east") == 0)
+			{
+				area = 44;
+			}
 
 			break;
 
@@ -1269,6 +1295,8 @@ int main()
 
 			cout << "You find yourself in a forest.\n";
 			cout << "There seem to be claw marks on the trees around you.\n";
+
+			cout << endl;
 			cout << "You can go North or East or West\n\n";
 
 			cout << "> ";
@@ -1296,6 +1324,8 @@ int main()
 
 			cout << "You find yourself in a forest.\n";
 			cout << "There seem to be claw marks on the trees around you.\n";
+
+			cout << endl;
 			cout << "You can go West\n\n";
 
 			cout << "> ";
@@ -1315,6 +1345,8 @@ int main()
 
 			cout << "You find yourself in a forest.\n";
 			cout << "There seem to be claw marks on the trees around you.\n";
+
+			cout << endl;
 			cout << "You can go West or South\n\n";
 
 			cout << "> ";
@@ -1328,6 +1360,111 @@ int main()
 			if (input.compare("go south") == 0)
 			{
 				area = 46;
+			}
+
+			break;
+
+		case 49:
+
+			cout << "Through the purple light, you begin to see a structure.\n";
+			cout << "The structure seems to be emitting the purple light.\n";
+			cout << "You start to walk towards the light and it seems to be a gate of some sort.\n";
+
+			if (first)
+			{
+				cout << "The gate stands around 20 feet tall and has gargoyles harboring it.\n";
+				first = false;
+			}
+
+			cout << endl;
+			cout << "Do you choose to go through the gate?\n";
+			cout << "OR\n";
+			cout << "Do you want to go back East?\n";
+
+			cout << endl;
+			cout << "> ";
+			getline(cin, input);
+			cout << endl;
+
+			if (input.compare("go through gate") == 0)
+			{
+				if (level < 5)
+				{
+					cout << "You go through the gate to find that you start to feel like your stomache is churning and you start to feel unbearable pain.\n";
+					cout << "You look down at your hands and you start to see it melt.\n";
+					cout << "You start to lose consciousness.\n";
+
+					cout << endl;
+					system("pause");
+					cout << endl;
+
+					cout << "Your body couldn't handle the condition and you unfortunately died.\n";
+					if (respawn == TRUE)
+					{
+						cout << "Maybe come back when you have conditioned your body to handle the gate.\n";
+					}
+
+					health = 0;
+
+					if (health <= 0) {
+						cout << "-----------------------------------------------" << endl;
+						cout << "You died!" << endl;
+						if (respawn == TRUE) {
+							cout << "You've have received the blessing of the statue." << endl;
+							lives -= 1;
+							cout << "You have " << lives << " remaining lives left." << endl;
+							area = 10;
+							cout << "You soul is being taken back to the statue." << endl;
+							cout << "You will shortly respawn at the statue of 'Masadora'" << endl << endl;
+							health = 100;
+						}
+						if (respawn == FALSE) {
+							lives = 0;
+							if (lives == 0)
+							{
+								MessageBox(nullptr, TEXT("You have no more lives!"), TEXT("GAME OVER"), MB_OK);
+								exit(0);
+							}
+						}
+					}
+
+				}
+				else
+				{
+					cout << "You hear a voice as you start to travel through the gate.\n";
+					cout << endl;
+					cout << "| Welcome to the Underworld.\n";
+					cout << endl;
+					cout << "This voice calls out to you and you can feel the greed and hunger of whomever welcomed you.\n";
+
+					cout << endl;
+					cout << "If you proceed to the Underworld, you will not be able to come back.\n";
+					cout << "Do you still wish to proceed?\n";
+					cout << "Yes or No\n";
+
+					cout << endl;
+					cout << "> ";
+					getline(cin, input);
+					cout << endl;
+
+					if (input.compare("yes") == 0)
+					{
+
+						cout << endl;
+						underworld();
+
+					}
+					else if (input.compare("no") == 0)
+					{
+
+						area = 49;
+
+					}
+				}
+			}
+			if (input.compare("go east") == 0)
+			{
+				area = 45;
 			}
 
 			break;

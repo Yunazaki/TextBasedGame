@@ -70,4 +70,6 @@ void tombOfNazarik(int);
 
 void castle();
 
+void underworld();
+
 void townShops(int);

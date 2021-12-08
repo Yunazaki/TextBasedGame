@@ -309,6 +309,34 @@ void castle()
 
 }
 
+void underworld()
+{
+
+	string input;
+	int room = 1;
+
+	do
+	{
+		cout << "-----------------------------------------------" << endl;
+		cout << "Turns: " << turns << "     "
+			<< "Level: " << level << "     "
+			<< "Class: " << playerOccupation
+			<< "     " << "Lives: " << lives;
+		cout << endl << endl;
+
+		turns++;
+
+		switch (room)
+		{
+
+
+
+		}
+
+	} while (lives > 0);
+
+}
+
 void townShops(int shop)
 {
 
@@ -325,7 +353,7 @@ void townShops(int shop)
 
 			LPCWSTR a = L"Potion Shop";
 			LPCSTR b = "Potion Shop";
-			SetConsoleTitle(a);
+			SetConsoleTitle(b);
 
 			npcGenerator(4);
 
@@ -364,7 +392,7 @@ void townShops(int shop)
 					cout << "| Sorry, seems like you don't have enough Kol for that." << endl << endl;
 				}
 			}
-			if (input.compare("buy agility potion") == 0)
+			if (input.compare("buy agility potion") == 0 && playerOccupation.compare("Mage") != 0)
 			{
 				if (kol >= 15)
 				{
@@ -379,6 +407,21 @@ void townShops(int shop)
 					cout << "| Sorry, seems like you don't have enough Kol for that." << endl << endl;
 				}
 			}
+			if (input.compare("buy mana potion") == 0 && playerOccupation.compare("Mage") == 0)
+			{
+				if (kol >= 10)
+				{
+					inventory[3] = "Mana Potion";
+					cout << "You bought a " << inventory[3] << "!" << endl;
+					kol -= 10;
+					cout << "You have " << kol << " kol left." << endl << endl;
+					system("pause");
+				}
+				else if (kol < 10)
+				{
+					cout << "| Sorry, seems like you don't have enough Kol for that." << endl << endl;
+				}
+			}
 		}
 
 		if (shop == 2)
@@ -386,7 +429,7 @@ void townShops(int shop)
 
 			LPCWSTR a = L"Weapon Shop";
 			LPCSTR b = "Weapon Shop";
-			SetConsoleTitle(a);
+			SetConsoleTitle(b);
 
 			npcGenerator(5);
 
@@ -457,7 +500,7 @@ void townShops(int shop)
 
 			LPCWSTR a = L"Armor Shop";
 			LPCSTR b = "Armor Shop";
-			SetConsoleTitle(a);
+			SetConsoleTitle(b);
 
 			npcGenerator(6);
 

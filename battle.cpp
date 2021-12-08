@@ -228,6 +228,21 @@ void battle(int monsterhealth, string monster)
 						cout << "You don't have an agility potion!" << endl;
 					}
 				}
+				if (input.compare("mana potion") == 0)
+				{
+
+					if (inventory[3].compare("Mana Potion") == 0)
+					{
+						mana += 50;
+						inventory[3] = " ";
+					}
+					else
+					{
+
+						cout << "You don't have a mana potion!" << endl;
+
+					}
+				}
 
 			}
 			if (input.compare("run") != 0)
@@ -376,8 +391,24 @@ void battle(int monsterhealth, string monster)
 						cout << "You don't have an agility potion!" << endl;
 					}
 				}
+				if (input.compare("mana potion") == 0)
+				{
+
+					if (inventory[3].compare("Mana Potion") == 0)
+					{
+						mana += 50;
+						inventory[3] = " ";
+					}
+					else
+					{
+
+						cout << "You don't have a mana potion!" << endl;
+
+					}
+				}
 
 			}
+			cout << endl;
 			system("pause");
 		}
 	}
