@@ -46,6 +46,8 @@ void seaGameWindow();
 
 void portalGameWindow();
 
+void underworldGameWindow();
+
 void commands(string);
 
 void checkInventory();

@@ -82,6 +82,7 @@ int main()
 			if (weapon.compare("Wooden Sword") != 0)
 			{
 				cout << "You find a Wooden Sword next to you.\n";
+				cout << endl;
 				cout << "You can pick up the Wooden Sword\n";
 				cout << "OR\n";
 			}
@@ -108,6 +109,8 @@ int main()
 		case 2:
 
 			cout << "You find yourself in front a gigantic stone wall.\n";
+
+			cout << endl;
 			cout << "You can follow the wall Left or Right\n\n";
 
 			cout << "> ";
@@ -129,6 +132,8 @@ int main()
 
 			masadoraGameWindow();
 			cout << "You stand in front of a big gate labeled 'West Gate'.\n";
+
+			cout << endl;
 			cout << "You can go through the gate\n";
 			cout << "OR\n";
 			cout << "Proceed West or South\n\n";
@@ -156,6 +161,8 @@ int main()
 
 			masadoraGameWindow();
 			cout << "You stand in front of a big gate labeled 'South Gate'\n";
+
+			cout << endl;
 			cout << "You can go through the gate\n";
 			cout << "OR\n";
 			cout << "Proceed East or West or South\n\n";
@@ -189,6 +196,8 @@ int main()
 			npcGenerator(1);
 
 			cout << "You've made it into the west side of the city of Masadora.\n";
+
+			cout << endl;
 			cout << "You can go North or East or West.\n\n";
 
 			cout << "> ";
@@ -215,6 +224,8 @@ int main()
 			npcGenerator(1);
 
 			cout << "You've made it into the south side of the city of Masadora.\n";
+
+			cout << endl;
 			cout << "You can go North or East or West or South.\n\n";
 
 			cout << "> ";
@@ -245,6 +256,8 @@ int main()
 			npcGenerator(1);
 
 			cout << "You've made it into the East side of the city of Masadora.\n";
+
+			cout << endl;
 			cout << "You can go East or West or South.\n\n";
 
 			cout << "> ";
@@ -269,6 +282,8 @@ int main()
 		case 8:
 
 			cout << "You see a shop labeled 'Potion Shop' in front of you.\n";
+
+			cout << endl;
 			cout << "You can go into the Potion Shop\n";
 			cout << "OR\n";
 			cout << "You can go North or East or South.\n\n";
@@ -299,10 +314,13 @@ int main()
 		case 9:
 
 			cout << "You stand in front of a palace like building labeled 'Adventurers Guild'.\n";
+
+			cout << endl;
 			cout << "You can go into the Adventurers Guild\n";
 			cout << "OR\n";
-			cout << "You can go West or North.\n\n";
+			cout << "You can go West or North.\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -326,10 +344,13 @@ int main()
 
 			masadoraGameWindow();
 			cout << "There is a gigantic statue labeled 'Masadora' in the middle of town." << endl;
+
+			cout << endl;
 			cout << "You can go touch the Statue.\n";
 			cout << "OR\n";
-			cout << "Proceed North or East or South or West.\n\n";
+			cout << "Proceed North or East or South or West.\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -386,6 +407,8 @@ int main()
 
 			masadoraGameWindow();
 			cout << "You stand in front of a big gate labeled 'East Gate'.\n";
+
+			cout << endl;
 			cout << "You can go through the gate\n";
 			cout << "OR\n";
 			cout << "You can proceed East\n\n";
@@ -409,6 +432,8 @@ int main()
 
 			forestGameWindow();
 			cout << "You find yourself in a forest.\n";
+
+			cout << endl;
 			cout << "You can go East or West or South\n\n";
 
 			cout << "> ";
@@ -436,6 +461,8 @@ int main()
 			cout << "You find yourself in a forest.\n";
 			cout << "Theres a sign dangling from a tree saying,\n\n";
 			cout << "West <--- Slime Sector\n\n";
+
+			cout << endl;
 			cout << "You can go East or West or South\n\n";
 
 			cout << "> ";
@@ -464,8 +491,11 @@ int main()
 			monsterGenerator(1);
 
 			cout << "You find yourself in a slimy musty looking area.\n";
-			cout << "You can go North or East or West or South\n\n";
 
+			cout << endl;
+			cout << "You can go North or East or West or South\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -495,8 +525,11 @@ int main()
 			monsterGenerator(1);
 
 			cout << "You find yourself in a slimy musty looking area.\n";
-			cout << "You can go North or East or West\n\n";
 
+			cout << endl;
+			cout << "You can go North or East or West\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -521,8 +554,11 @@ int main()
 			monsterGenerator(1);
 
 			cout << "You find yourself in a slimy musty looking area.\n";
-			cout << "You can go North or East or West\n\n";
 
+			cout << endl;
+			cout << "You can go North or East or West\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -547,8 +583,11 @@ int main()
 			monsterGenerator(1);
 
 			cout << "You find yourself in a slimy musty looking area.\n";
-			cout << "You can go North or East\n\n";
+			
+			cout << endl;
+			cout << "You can go North or East\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -573,8 +612,11 @@ int main()
 			monsterGenerator(1);
 
 			cout << "You find yourself in a slimy musty looking area.\n";
-			cout << "You can go North or East\n\n";
 
+			cout << endl;
+			cout << "You can go North or East\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -599,8 +641,11 @@ int main()
 			monsterGenerator(1);
 
 			cout << "You find yourself in a slimy musty looking area.\n";
-			cout << "You can go East or South\n\n";
 
+			cout << endl;
+			cout << "You can go East or South\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -625,8 +670,11 @@ int main()
 			monsterGenerator(1);
 
 			cout << "You find yourself in a slimy musty looking area.\n";
-			cout << "You can go West or East or South\n\n";
 
+			cout << endl;
+			cout << "You can go West or East or South\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -656,8 +704,11 @@ int main()
 			monsterGenerator(1);
 
 			cout << "You find yourself in a slimy musty looking area.\n";
-			cout << "You can go West or South\n\n";
 
+			cout << endl;
+			cout << "You can go West or South\n";
+			
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -682,11 +733,14 @@ int main()
 			cout << "You see an altar covered in slime in front of you.\n";
 			if (slimeSecretion >= 5)
 			{
+				cout << endl;
 				cout << "You can pour the 5 Slime Secretion onto the Altar.\n";
-				cout << "OR\n";
+				cout << "OR";
 			}
-			cout << "You can go North or East or South or West\n\n";
+			cout << endl;
+			cout << "You can go North or East or South or West\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -729,10 +783,13 @@ int main()
 		case 24:
 
 			cout << "You see a shop labeled 'Weapon Shop' in front of you.\n";
+
+			cout << endl;
 			cout << "You can go into the Weapon Shop\n";
 			cout << "OR\n";
-			cout << "You can go West or South.\n\n";
+			cout << "You can go West or South.\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -759,10 +816,13 @@ int main()
 		case 25:
 
 			cout << "You see a shop labeled 'Armor Shop' in front of you.\n";
+
+			cout << endl;
 			cout << "You can go into the Armor Shop\n";
 			cout << "OR\n";
-			cout << "You can go East\n\n";
+			cout << "You can go East\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -786,8 +846,11 @@ int main()
 
 			forestGameWindow();
 			cout << "You find yourself in a forest.\n";
-			cout << "You can go North or West\n\n";
 
+			cout << endl;
+			cout << "You can go North or West\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -808,8 +871,11 @@ int main()
 			forestGameWindow();
 			cout << "You find yourself in a forest.\n";
 			cout << "You see a sign North of you\n";
-			cout << "You can go North or East or West or South\n\n";
 
+			cout << endl;
+			cout << "You can go North or East or West or South\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -843,8 +909,10 @@ int main()
 				cout << "You feel a creepy vibe coming from the southern direction.\n";
 				cout << "Maybe it's best not to go that way.\n";
 			}
-			cout << "You can go North or South\n\n";
+			cout << endl;
+			cout << "You can go North or South\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -865,8 +933,11 @@ int main()
 			forestGameWindow();
 			cout << "You find yourself in a forest.\n";
 			cout << "You smell the salty sea south of you.\n";
-			cout << "You can go North or East or South\n\n";
 
+			cout << endl;
+			cout << "You can go North or East or South\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -896,15 +967,17 @@ int main()
 
 			if (inventory[4].compare("Boat") == 0)
 			{
+				cout << endl;
 				cout << "You can go North\n";
 				cout << "OR\n";
-				cout << "You can travel South onto rough waters\n\n";
+				cout << "You can travel South onto rough waters\n";
 			}
 			else
 			{
-				cout << "You can go North\n\n";
+				cout << "You can go North\n";
 			}
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -930,10 +1003,13 @@ int main()
 			monsterGenerator(3);
 
 			cout << "You're sailing on rough waters!" << endl;
+
+			cout << endl;
 			cout << "You can go back to the docks North" << endl;
 			cout << "OR" << endl;
-			cout << "Continue sailing East or South" << endl << endl;
+			cout << "Continue sailing East or South" << endl;
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -958,8 +1034,11 @@ int main()
 			monsterGenerator(3);
 
 			cout << "You're sailing on rough waters!" << endl;
-			cout << "You can sail West or South" << endl << endl;
 
+			cout << endl;
+			cout << "You can sail West or South" << endl;
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -978,8 +1057,11 @@ int main()
 			monsterGenerator(3);
 
 			cout << "You're sailing on rough water!" << endl;
-			cout << "You can sail North or East" << endl << endl;
 
+			cout << endl;
+			cout << "You can sail North or East" << endl;
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -998,8 +1080,11 @@ int main()
 			monsterGenerator(3);
 
 			cout << "You're sailing on rough waters!" << endl;
-			cout << "You can sail North or West" << endl << endl;
 
+			cout << endl;
+			cout << "You can sail North or West" << endl;
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1020,8 +1105,11 @@ int main()
 			forestGameWindow();
 			cout << "You find yourself in a forest.\n";
 			cout << "You can see a graveyard in the distance towards the East direction\n";
-			cout << "You can go West or East\n\n";
+			
+			cout << endl;
+			cout << "You can go West or East\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1041,11 +1129,14 @@ int main()
 
 			cout << "You've made it to the front gate of the graveyard.\n";
 			cout << "There is a sign that says,\n\n";
-			cout << "<--- DANGER! TOMB OF NAZARIK AHEAD!\n\n";
+			cout << "<--- DANGER! TOMB OF NAZARIK AHEAD!\n";
+
+			cout << endl;
 			cout << "You can proceed East\n";
 			cout << "OR\n";
-			cout << "Go back West\n\n";
+			cout << "Go back West\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1065,8 +1156,11 @@ int main()
 
 			cout << "You're on a pathway within the graveyard.\n";
 			cout << "Tombstones are plenty within the graveyard and it is all you see to the North and South of you.\n";
-			cout << "You can go North or West or East or South\n\n";
 
+			cout << endl;
+			cout << "You can go North or West or East or South\n";
+
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1095,8 +1189,11 @@ int main()
 			monsterGenerator(5);
 
 			cout << "You walk through a field of graveyards.\n";
+
+			cout << endl;
 			cout << "You can go East or South.\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1117,8 +1214,11 @@ int main()
 			monsterGenerator(5);
 
 			cout << "You walk through a field of graveyards.\n";
+
+			cout << endl;
 			cout << "You can go West or South.\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1139,8 +1239,11 @@ int main()
 			monsterGenerator(5);
 
 			cout << "You walk through a field of graveyards.\n";
+
+			cout << endl;
 			cout << "You can go North or east.\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1165,6 +1268,7 @@ int main()
 			cout << endl;
 			cout << "You can go North or West.\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1187,8 +1291,9 @@ int main()
 			cout << "You start to see a stone structure past the fog towards East.\n";
 
 			cout << endl;
-			cout << "You can go North or West or East or South\n\n";
+			cout << "You can go North or West or East or South\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1219,8 +1324,9 @@ int main()
 			cout << endl;
 			cout << "You can go into the Tomb\n";
 			cout << "OR\n";
-			cout << "You can go West\n\n";
+			cout << "You can go West\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1246,8 +1352,9 @@ int main()
 			}
 
 			cout << endl;
-			cout << "You can go North or West\n\n";
+			cout << "You can go North or West\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1297,8 +1404,9 @@ int main()
 			cout << "There seem to be claw marks on the trees around you.\n";
 
 			cout << endl;
-			cout << "You can go North or East or West\n\n";
+			cout << "You can go North or East or West\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1326,8 +1434,9 @@ int main()
 			cout << "There seem to be claw marks on the trees around you.\n";
 
 			cout << endl;
-			cout << "You can go West\n\n";
+			cout << "You can go West\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
@@ -1347,8 +1456,9 @@ int main()
 			cout << "There seem to be claw marks on the trees around you.\n";
 
 			cout << endl;
-			cout << "You can go West or South\n\n";
+			cout << "You can go West or South\n";
 
+			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;

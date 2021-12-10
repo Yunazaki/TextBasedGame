@@ -59,6 +59,6 @@ void underworldGameWindow()
 	LPCSTR b = "The Underworld";
 	SetConsoleTitle(b);
 
-	system("COLOR 0D");
+	system("COLOR 48");
 
 }

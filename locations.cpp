@@ -185,6 +185,8 @@ void tombOfNazarik(int killed)
 			{
 
 				cout << "Doesn't seem like there is too much going on here.\n";
+
+				cout << endl;
 				cout << "You can go deeper in by going East\n";
 				cout << "OR\n";
 				cout << "Leave\n";
@@ -204,6 +206,8 @@ void tombOfNazarik(int killed)
 			{
 
 				cout << "There is an eerie feeling deeper inside the tomb.\n";
+
+				cout << endl;
 				cout << "You can go deeper in by going East\n";
 				cout << "OR\n";
 				cout << "Leave\n";
@@ -229,10 +233,12 @@ void tombOfNazarik(int killed)
 			{
 				cout << "Doesn't seem like there's much you can do in this tomb right now.\n";
 				cout << "Maybe come back after defeating some skeletons.\n";
+				cout << endl;
 			}
 			if (killed >= 5)
 			{
 				cout << "The throne seems to have a glow to it of some sort.\n";
+				cout << endl;
 				cout << "You can go to the throne\n";
 				cout << "OR\n";
 			}
@@ -261,6 +267,8 @@ void tombOfNazarik(int killed)
 		case 3:
 
 			cout << "There seems to be a light on the seat of the throne.\n";
+
+			cout << endl;
 			cout << "You can touch the light\n";
 			cout << "OR\n";
 			cout << "You can Leave or go back West\n";
@@ -272,6 +280,10 @@ void tombOfNazarik(int killed)
 
 			if (input.compare("touch light") == 0 && killed >= 5)
 			{
+				for (int i = skeletonsKilled; i > 0; i--)
+				{
+					skeletonsKilled--;
+				}
 				monsterGenerator(5);
 			}
 
@@ -315,6 +327,8 @@ void underworld()
 	string input;
 	int room = 1;
 
+	underworldGameWindow();
+
 	do
 	{
 		cout << "-----------------------------------------------" << endl;
@@ -329,7 +343,20 @@ void underworld()
 		switch (room)
 		{
 
+		case 1:
 
+			cout << "Surrounded by the heat of the flames, you've made it into the Underworld.\n";
+			cout << "You're one step closer to your goal.\n";
+
+			cout << endl;
+			cout << "You can go\n";
+
+			cout << endl;
+			cout << "> ";
+			getline(cin, input);
+			cout << endl;
+
+			break;
 
 		}
 
