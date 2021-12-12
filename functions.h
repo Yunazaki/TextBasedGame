@@ -31,6 +31,7 @@ extern int area;
 extern int lives;
 extern int health;
 extern int mana;
+extern bool barrier;
 extern int turns;
 extern bool respawn;
 

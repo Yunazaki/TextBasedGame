@@ -200,6 +200,10 @@ void tombOfNazarik(int killed)
 				{
 					room = 2;
 				}
+				if (input.compare("leave") == 0)
+				{
+					room = 999;
+				}
 
 			}
 			if (killed >= 5)
@@ -271,7 +275,7 @@ void tombOfNazarik(int killed)
 			cout << endl;
 			cout << "You can touch the light\n";
 			cout << "OR\n";
-			cout << "You can Leave or go back West\n";
+			cout << "You can go back West\n";
 
 			cout << endl;
 			cout << "> ";
@@ -284,12 +288,21 @@ void tombOfNazarik(int killed)
 				{
 					skeletonsKilled--;
 				}
-				monsterGenerator(5);
+				monsterGenerator(6);
 			}
-
+			
+			if (input.compare("go west") == 0)
+			{
+				room = 2;
+			}
 		}
 
-	} while (input.compare("leave") != 0 && lives > 0);
+		if (room == 999)
+		{
+			break;
+		}
+
+	} while (health > 0 && lives > 0);
 
 }
 
@@ -326,6 +339,7 @@ void underworld()
 
 	string input;
 	int room = 1;
+	bool first = TRUE;
 
 	underworldGameWindow();
 
@@ -346,21 +360,196 @@ void underworld()
 		case 1:
 
 			cout << "Surrounded by the heat of the flames, you've made it into the Underworld.\n";
-			cout << "You're one step closer to your goal.\n";
+
+			if (first == TRUE)
+			{
+				cout << "You're one step closer to your goal.\n";
+				first = FALSE;
+			}
+
 
 			cout << endl;
-			cout << "You can go\n";
+			cout << "You can go back through the gate.\n";
+			cout << "OR\n";
+			cout << "You can go North or West\n";
+
 
 			cout << endl;
 			cout << "> ";
 			getline(cin, input);
 			cout << endl;
 
+			if (input.compare("go through gate") == 0)
+			{
+				room = 999;
+			}
+			if (input.compare("go north") == 0)
+			{
+				room = 2;
+			}
+			if (input.compare("go west") == 0)
+			{
+				room = 3;
+			}
+
+
+			break;
+
+		case 2:
+
+			monsterGenerator(7);
+
+			cout << "You've made it into a seemingly empty space in the underworld.\n";
+			cout << "There seems to be a mountain of ashes North of you.\n";
+			cout << "Powerful monsters lurk here.\n";
+
+			cout << endl;
+			cout << "You can go North or West or East or South.\n";
+
+			cout << endl;
+			cout << "> ";
+			getline(cin, input);
+			cout << endl;
+
+			if (input.compare("go north") == 0)
+			{
+				room = 7;
+			}
+			if (input.compare("go west") == 0)
+			{
+				room = 4;
+			}
+			if (input.compare("go east") == 0)
+			{
+				room = 3;
+			}
+			if (input.compare("go south") == 0)
+			{
+				room = 1;
+			}
+
+			break;
+
+		case 3:
+
+			cout << "You seem to be on the border of some barrier.\n";
+			if (barrier == FALSE)
+			{
+				cout << "There seems to be some sort of glass clouded ball on the floor next to the barrier.\n";
+				cout << endl;
+				cout << "You can pick up the ball\n";
+				cout << "OR";
+			}
+
+			cout << endl;
+			cout << "You can go West\n";
+
+			cout << endl;
+			cout << "> ";
+			getline(cin, input);
+			cout << endl;
+
+			if (input.compare("go west") == 0)
+			{
+				room = 2;
+			}
+			if (input.compare("pick up ball") == 0 && barrier == FALSE)
+			{
+				barrier = TRUE;
+				cout << "You've picked up the glass clouded ball!\n";
+				cout << "The glass breaks as soon as you pick it up and a slimey substance comes to shroud your entire body.\n";
+				cout << "Seems like the slimey substance will protect you even more in battle!\n";
+
+				cout << endl;
+				system("pause");
+				cout << endl;
+			}
+
+			break;
+
+		case 4:
+
+			cout << "You've made it to a building with the label 'Potion Shop' on it.\n";
+
+			cout << endl;
+			cout << "You can go into the Potion Shop\n";
+			cout << "OR\n";
+			cout << "You can go East or South\n";
+
+			if (input.compare("go into potion shop") == 0)
+			{
+				townShops(1);
+			}
+			if (input.compare("go east") == 0)
+			{
+				room = 2;
+			}
+			if (input.compare("go south") == 0)
+			{
+				room = 5;
+			}
+			
+			break;
+
+		case 5:
+
+			cout << "You've made it into a seemingly empty space in the underworld.\n";
+			cout << "Powerful monsters lurk around here.\n";
+			cout << "Be careful\n";
+			if (barrier == FALSE)
+			{
+				cout << "There seems to be some sort of glass clouded ball on the floor next to the barrier.\n";
+				cout << endl;
+				cout << "You can pick up the ball\n";
+				cout << "OR";
+			}
+
+			cout << endl;
+			cout << "You can go North or West or East or South.\n";
+
+			cout << endl;
+			cout << "> ";
+			getline(cin, input);
+			cout << endl;
+
+			if (input.compare("go north") == 0)
+			{
+				room = 7;
+			}
+			if (input.compare("go west") == 0)
+			{
+				room = 4;
+			}
+			if (input.compare("go east") == 0)
+			{
+				room = 3;
+			}
+			if (input.compare("go south") == 0)
+			{
+				room = 1;
+			}
+			if (input.compare("pick up ball") == 0 && barrier == FALSE)
+			{
+				barrier = TRUE;
+				cout << "You've picked up the glass clouded ball!\n";
+				cout << "The glass breaks as soon as you pick it up and a slimey substance comes to shroud your entire body.\n";
+				cout << "Seems like the slimey substance will protect you even more in battle!\n";
+
+				cout << endl;
+				system("pause");
+				cout << endl;
+			}
+
 			break;
 
 		}
 
-	} while (lives > 0);
+		if (room == 999)
+		{
+			break;
+		}
+
+	} while (health > 0 && lives > 0);
 
 }
 
@@ -380,7 +569,7 @@ void townShops(int shop)
 
 			LPCWSTR a = L"Potion Shop";
 			LPCSTR b = "Potion Shop";
-			SetConsoleTitle(b);
+			SetConsoleTitle(a);
 
 			npcGenerator(4);
 
@@ -456,7 +645,7 @@ void townShops(int shop)
 
 			LPCWSTR a = L"Weapon Shop";
 			LPCSTR b = "Weapon Shop";
-			SetConsoleTitle(b);
+			SetConsoleTitle(a);
 
 			npcGenerator(5);
 
@@ -527,7 +716,7 @@ void townShops(int shop)
 
 			LPCWSTR a = L"Armor Shop";
 			LPCSTR b = "Armor Shop";
-			SetConsoleTitle(b);
+			SetConsoleTitle(a);
 
 			npcGenerator(6);
 

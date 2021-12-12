@@ -5,7 +5,7 @@ void masadoraGameWindow()
 
 	LPCWSTR a = L"The City of Masadora";
 	LPCSTR b = "The City of Masadora";
-	SetConsoleTitle(b);
+	SetConsoleTitle(a);
 
 	system("COLOR E8");
 }
@@ -15,7 +15,7 @@ void forestGameWindow()
 
 	LPCWSTR a = L"The Forest";
 	LPCSTR b = "The Forest";
-	SetConsoleTitle(b);
+	SetConsoleTitle(a);
 
 	system("COLOR 21");
 }
@@ -25,7 +25,7 @@ void slimeGameWindow()
 
 	LPCWSTR a = L"The Slime Sector";
 	LPCSTR b = "The Slime Sector";
-	SetConsoleTitle(b);
+	SetConsoleTitle(a);
 
 	system("COLOR A1");
 }
@@ -35,7 +35,7 @@ void seaGameWindow()
 
 	LPCWSTR a = L"Rough Waters";
 	LPCSTR b = "Rough Waters";
-	SetConsoleTitle(b);
+	SetConsoleTitle(a);
 
 	system("COLOR 17");
 
@@ -46,7 +46,7 @@ void portalGameWindow()
 
 	LPCWSTR a = L"Portal";
 	LPCSTR b = "Portal";
-	SetConsoleTitle(b);
+	SetConsoleTitle(a);
 
 	system("COLOR 0D");
 
@@ -57,8 +57,8 @@ void underworldGameWindow()
 
 	LPCWSTR a = L"The Underworld";
 	LPCSTR b = "The Underworld";
-	SetConsoleTitle(b);
+	SetConsoleTitle(a);
 
-	system("COLOR 48");
+	system("COLOR 40");
 
 }

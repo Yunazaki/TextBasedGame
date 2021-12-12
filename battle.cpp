@@ -73,6 +73,12 @@ void battle(int monsterhealth, string monster)
 			monsterMissChance = rand() % 151;
 		}
 
+		if (monster.compare("Ainz Ooal Gown") == 0)
+		{
+			monsterDamage = rand() % 8 + 5;
+			monsterMissChance = rand() % 101;
+		}
+
 		if (monster.compare("Wolf") == 0)
 		{
 			monsterDamage = rand() % 5 + 1;
@@ -84,6 +90,7 @@ void battle(int monsterhealth, string monster)
 			monsterDamage = rand() % 5 + 1;
 			monsterMissChance = rand() % 101;
 		}
+
 
 		if (armor != " ")
 		{
@@ -100,6 +107,12 @@ void battle(int monsterhealth, string monster)
 			{
 				monsterMissChance *= 1.5;
 			}
+		}
+
+		if (barrier == TRUE)
+		{
+			monsterDamage *= .8;
+			monsterMissChance * 1.1;
 		}
 
 		if (battleStart == 1)
@@ -142,7 +155,7 @@ void battle(int monsterhealth, string monster)
 					}
 					else if (weapon.compare("Ruby Gem Staff") == 0)
 					{
-						cout << "You used a fireball on the " << monster << " using up " << manaCost << " and it did " << playerDamage << "." << endl << endl;
+						cout << "You used a fireball on the " << monster << " using up " << manaCost << " mana doing " << playerDamage << " damage." << endl << endl;
 						monsterhealth -= playerDamage;
 						mana -= manaCost;
 					}
@@ -304,10 +317,15 @@ void battle(int monsterhealth, string monster)
 				}
 				else if (playerOccupation.compare("Mage") == 0)
 				{
-					if (weapon.compare("Ruby Gem Staff") == 0)
+					if (mana <= 0)
 					{
-						cout << "You used a fireball on the " << monster << " and it did " << playerDamage << "." << endl << endl;
+						cout << "You have no mana to cast anything!" << endl << endl;
+					}
+					else if (weapon.compare("Ruby Gem Staff") == 0)
+					{
+						cout << "You used a fireball on the " << monster << " using up " << manaCost << " mana doing " << playerDamage << " damage." << endl << endl;
 						monsterhealth -= playerDamage;
+						mana -= manaCost;
 					}
 				}
 				else if (playerOccupation.compare("Assassin") == 0)
@@ -521,6 +539,16 @@ void itemDropper(string monster)
 		cout << "-----------------------------------------------" << endl;
 	}
 
+	if (droprate <= 40 && monster == "Hellhound")
+	{
+		koldrop = rand() % 15 + 1;
+		expdrop = rand() % 31 + 15;
+		cout << "You gained " << expdrop << " exp and " << koldrop << " Kol." << endl;
+		kol += koldrop;
+		levelCounter += expdrop;
+		cout << "-----------------------------------------------" << endl;
+	}
+
 	if (levelCounter >= levelBar)
 	{
 		level += 1;
@@ -576,6 +604,22 @@ void monsterGenerator(int monster)
 		cout << "| You stand before the great Ainz Ooal Gown.\n";
 		cout << "| You've taken the souls of my comrades and now you will pay!\n\n";
 
+		cout << "Ainz Ooal Gown summons skeletons on you.\n\n";
+		battle(25, "Skeleton");
+
+		cout << "Another Skeleton appears!\n\n";
+		battle(25, "Skeleton");
+
+		cout << "Ainz Ooal Gown finally appears!\n\n";
+		battle(100, "Ainz Ooal Gown");
 
 	}
+
+	if (monster == 7)
+	{
+		cout << "You've encountered a hellhound!" << endl << endl;
+		battle(80, "Hellhound");
+	}
+
+	
 }

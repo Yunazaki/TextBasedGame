@@ -1,1 +1,3 @@
-﻿  TextBasedGame.vcxproj -> C:\Users\brand\source\repos\TextBasedGame\Debug\TextBasedGame.exe
+﻿  game.cpp
+C:\Users\brand\source\repos\TextBasedGame\TextBasedGame\game.cpp(49,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  TextBasedGame.vcxproj -> C:\Users\brand\source\repos\TextBasedGame\Debug\TextBasedGame.exe

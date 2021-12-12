@@ -25,6 +25,7 @@ int skeletonsKilled = 0;
 int lives = 3;
 int health = 100;
 int mana = 100;
+bool barrier = FALSE;
 
 int area = 1;
 int turns = 0;
@@ -36,7 +37,7 @@ int main()
 
 	LPCWSTR a = L"The Typical Isekai";
 	LPCSTR b = "The Typical Isekai";
-	SetConsoleTitle(b);
+	SetConsoleTitle(a);
 
 	HWND console = GetConsoleWindow();
 	RECT r;
@@ -75,6 +76,7 @@ int main()
 
 		switch (area)
 		{
+
 		case 1:
 
 			cout << "You open your eyes to a forest filled with the light of fireflies.\n";
@@ -363,7 +365,7 @@ int main()
 					health = 100;
 					if (playerOccupation.compare("Mage") == 0)
 					{
-						cout << "You're mana has also been restored!" << endl;
+						cout << "Your mana has also been restored!" << endl;
 						mana = 100;
 					}
 
@@ -1508,7 +1510,7 @@ int main()
 					system("pause");
 					cout << endl;
 
-					cout << "Your body couldn't handle the condition and you unfortunately died.\n";
+					cout << "Your body couldn't handle the tense condition and unfortunately, you died.\n";
 					if (respawn == TRUE)
 					{
 						cout << "Maybe come back when you have conditioned your body to handle the gate.\n";
@@ -1548,7 +1550,6 @@ int main()
 					cout << "This voice calls out to you and you can feel the greed and hunger of whomever welcomed you.\n";
 
 					cout << endl;
-					cout << "If you proceed to the Underworld, you will not be able to come back.\n";
 					cout << "Do you still wish to proceed?\n";
 					cout << "Yes or No\n";
 
