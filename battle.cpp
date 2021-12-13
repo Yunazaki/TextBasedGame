@@ -38,19 +38,47 @@ void battle(int monsterhealth, string monster)
 			{
 				playerDamage = rand() % 7 + 4;
 			}
+			if (weapon.compare("Iron Sword") == 0)
+			{
+				playerDamage = rand() % 13 + 12;
+			}
 			if (weapon.compare("Copper Sword") == 0)
 			{
 				playerDamage = rand() % 11 + 8;
+			}
+			if (weapon.compare("War") == 0)
+			{
+				playerDamage = rand() % 15 + 18;
 			}
 			if (weapon.compare("Ruby Gem Staff") == 0)
 			{
 				playerDamage = rand() % 13 + 8;
 				manaCost = 10;
 			}
+			if (weapon.compare("Tome of Stars") == 0)
+			{
+				playerDamage = rand() % 17 + 12;
+				manaCost = 15;
+			}
+			if (weapon.compare("Tome of Eternity") == 0)
+			{
+				playerDamage = rand() % 19 + 18;
+				manaCost = 20;
+			}
 			if (weapon.compare("Copper Daggers") == 0)
 			{
-				playerDamage = rand() & 9 + 8;
+				playerDamage = rand() % 9 + 8;
 				missChance *= 1.4;
+			}
+			if (weapon.compare("Iron Daggers") == 0)
+			{
+				playerDamage = rand() % 9 + 12;
+				missChance *= 1.5;
+			}
+			if (weapon.compare("Demon Daggers") == 0)
+			{
+				playerDamage = rand() % 11 + 18;
+				missChance *= 1.65;
 			}
 
 		}
@@ -91,6 +119,17 @@ void battle(int monsterhealth, string monster)
 			monsterMissChance = rand() % 101;
 		}
 
+		if (monster.compare("Milim Nova") == 0)
+		{
+			monsterDamage = rand() % 10 + 6;
+			monsterMissChance = rand() % 81;
+		}
+		
+		if (monster.compare("Anos Voldigoad") == 0)
+		{
+			monsterDamage = rand() % 11 + 10;
+			monsterMissChance = rand() % 101;
+		}
 
 		if (armor != " ")
 		{
@@ -98,14 +137,43 @@ void battle(int monsterhealth, string monster)
 			{
 				monsterDamage *= .8;
 			}
+			if (armor.compare("Iron Armor") == 0)
+			{
+				monsterDamage *= .7;
+			}
+			if (armor.compare("Samurai Armor") == 0)
+			{
+				monsterDamage *= .65;
+				monsterMissChance *= 1.2;
+			}
 			if (armor.compare("Leather Robe") == 0)
 			{
 				playerDamage *= 1.15;
 				mana = 110;
 			}
+			if (armor.compare("Silk Woven Robe") == 0)
+			{
+				playerDamage *= 1.2;
+				mana = 130;
+			}
+			if (armor.compare("Gown of Ainz Ooal Gown") == 0)
+			{
+				playerDamage *= 1.25;
+				mana = 150;
+				monsterDamage *= .9;
+			}
 			if (armor.compare("Wolf Hide") == 0)
 			{
 				monsterMissChance *= 1.5;
+			}
+			if (armor.compare("Skeletone Bone Armor") == 0)
+			{
+				monsterMissChance *= 1.6;
+			}
+			if (armor.compare("Ninja Outfit") == 0)
+			{
+				monsterMissChance *= 1.7;
+				monsterDamage *= .95;
 			}
 		}
 
@@ -502,7 +570,7 @@ void itemDropper(string monster)
 		koldrop = rand() % 26 + 25;
 		expdrop = rand() % 51 + 25;
 		cout << "You gained " << expdrop << " exp, Kraken Ink and " << koldrop << " Kol." << endl;
-		inventory[5] = "Kraken Ink";
+		inventory[6] = "Kraken Ink";
 		kol += koldrop;
 		levelCounter += expdrop;
 		if (questTrue[1] != FALSE)
@@ -528,7 +596,7 @@ void itemDropper(string monster)
 		koldrop = rand() % 26 + 25;
 		expdrop = rand() % 51 + 25;
 		cout << "You gained " << expdrop << " exp, the Staff of Ainz Ooal Gown and " << koldrop << " Kol." << endl;
-		inventory[5] = "Staff of Ainz Ooal Gown";
+		inventory[7] = "Staff of Ainz Ooal Gown";
 		kol += koldrop;
 		levelCounter += expdrop;
 		skeletonsKilled = 0;
@@ -546,6 +614,38 @@ void itemDropper(string monster)
 		cout << "You gained " << expdrop << " exp and " << koldrop << " Kol." << endl;
 		kol += koldrop;
 		levelCounter += expdrop;
+		cout << "-----------------------------------------------" << endl;
+	}
+
+	if (monster == "Milim Nova")
+	{
+		koldrop = rand() % 51 + 50;
+		expdrop = rand() % 51 + 50;
+		cout << "You gained " << expdrop << " exp, the Dragon's Head and " << koldrop << " Kol." << endl;
+		inventory[8] = "Dragon Head";
+		kol += koldrop;
+		levelCounter += expdrop;
+		skeletonsKilled = 0;
+		if (questTrue[3] != FALSE)
+		{
+			questTrue[3] = FALSE;
+		}
+		cout << "-----------------------------------------------" << endl;
+	}
+
+	if (monster == "Anos Voldigoad")
+	{
+		koldrop = rand() % 51 + 50;
+		expdrop = rand() % 51 + 50;
+		cout << "You gained " << expdrop << " exp, the Demon King Core and " << koldrop << " Kol." << endl;
+		inventory[9] = "Demon King Core";
+		kol += koldrop;
+		levelCounter += expdrop;
+		skeletonsKilled = 0;
+		if (questTrue[4] != FALSE)
+		{
+			questTrue[4] = FALSE;
+		}
 		cout << "-----------------------------------------------" << endl;
 	}
 
@@ -576,14 +676,14 @@ void monsterGenerator(int monster)
 		cout << "You pour the slime secretion onto the Altar and something unexpected happens." << endl;
 		cout << "The slime secretion starts to expand." << endl;
 		cout << "You've summoned the Slime King!" << endl << endl;
-		battle(150, "Slime King");
+		battle(125, "Slime King");
 	}
 
 	if (monster == 3 && num <= 10)
 	{
 		cout << "A mythical deep sea creature comes from the depths and appears in front of you!" << endl;
 		cout << "It's the Kraken!" << endl << endl;
-		battle(150, "Kraken");
+		battle(125, "Kraken");
 	}
 
 	if (monster == 4 && num <= 40)
@@ -621,5 +721,24 @@ void monsterGenerator(int monster)
 		battle(80, "Hellhound");
 	}
 
-	
+	if (monster == 8)
+	{
+		cout << "The Dragon feels your footsteps on the ashes and has awoken from it's slumber!" << endl;
+		cout << "Opening it's eyes, it starts to speak to you." << endl << endl;
+		cout << "| You stand before the great Milim Nova!" << endl;
+		cout << "| Are you ready to face me?" << endl << endl;
+
+		cout << "| Boss: Milim Nova" << endl << endl;
+
+		battle(175, "Milim Nova");
+	}
+
+	if (monster == 9)
+	{
+		cout << "| Boss: Anos Voldigoad";
+		cout << "| I've been awaiting for your arrival " << playerName << "." << endl;
+		cout << "| Are you ready to face off with me?" << endl << endl;
+
+		battle(225, "Anos Voldigoad");
+	}
 }

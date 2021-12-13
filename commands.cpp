@@ -91,6 +91,7 @@ void help()
 	cout << "| go (direction)" << endl;
 	cout << "| go through (something)" << endl;
 	cout << "| go into (place)" << endl;
+	cout << "| fight (something)" << endl;
 	cout << "| leave" << endl;
 	cout << "| inventory" << endl;
 	cout << "| quest" << endl;

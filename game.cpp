@@ -46,7 +46,7 @@ int main()
 	MoveWindow(console, r.left, r.top, 1280, 720, TRUE);
 	system("COLOR A5");
 
-	//MessageBox(nullptr, TEXT("Welcome to 'The Typical Isekai'!"), TEXT("Welcome!"), MB_OK);
+	MessageBox(nullptr, TEXT("Welcome to 'The Typical Isekai'!"), TEXT("Welcome!"), MB_OK);
 	srand(time(NULL));
 
 	string input;

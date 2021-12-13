@@ -52,6 +52,32 @@ void npcGenerator(int npc)
 					}
 					cout << endl;
 				}
+				else if (questTrue[2] == TRUE)
+				{
+					cout << "| Ainz Ooal Gown?" << endl;
+					cout << "| That's a pretty long name." << endl;
+					cout << "| I think that you have to defeat at least 5 regular skeletons in order to summon him." << endl;
+					cout << "| Good luck trying to defeat him and his skeleton army!" << endl << endl;
+				}
+				else if (questTrue[3] == TRUE)
+				{
+					cout << "| SLAYING A DRAGON!?!?" << endl;
+					cout << "| That sounds like it's going to be rough but I'm pretty sure the Dragon rest in the underworld." << endl;
+					cout << "| The gate to the underworld is South of the Slime Sector." << endl;
+					if (level < 5)
+					{
+						cout << "| Just make sure you reach level 5 before you go through the gate." << endl;
+						cout << "| Otherwise your body might not be able to handle the transition." << endl;
+					}
+					cout << "| Good luck trying to collect it's head." << endl << endl;
+				}
+				else if (questTrue[4] == TRUE)
+				{
+					cout << "| Great job on surviving the Underworld." << endl;
+					cout << "| I hear you're ready to take on the Demon King now." << endl;
+					cout << "| He's probably resting in his castle in the underworld." << endl;
+					cout << "| You'll most likely find him there." << endl << endl;
+				}
 
 			}
 			else if (playerOccupation != "Knight" || playerOccupation != "Mage" || playerOccupation != "Assassin")
@@ -204,7 +230,15 @@ void npcGenerator(int npc)
 				cout << "| You can choose from the following weapons to buy!" << endl << endl;
 				if (weapon.compare("Copper Sword") != 0)
 				{
-					cout << "1.) Copper Sword [20 Kol] [8-18 DAMAGE]" << endl;
+					cout << "| Copper Sword [20 Kol] [8-18 DAMAGE]" << endl;
+				}
+				if (weapon.compare("Iron Sword") != 0 && level > 3)
+				{
+					cout << "| Iron Sword [50 Kol] [12-24 DAMAGE]" << endl;
+				}
+				if (weapon.compare("War") != 0 && level > 5)
+				{
+					cout << "| War [75 Kol] [18-32 DAMAGE]" << endl;
 				}
 
 			}
@@ -214,9 +248,16 @@ void npcGenerator(int npc)
 				cout << "| You can choose from the following weapons to buy!" << endl << endl;
 				if (weapon.compare("Ruby Gem Staff") != 0)
 				{
-					cout << "1.) Ruby Gem Staff [20 Kol] [8-20 DAMAGE]" << endl;
+					cout << "| Ruby Gem Staff [20 Kol] [8-20 DAMAGE]" << endl;
 				}
-
+				if (weapon.compare("Tome of Stars") != 0 && level > 3)
+				{
+					cout << "| Tome of Stars [50 Kol] [12-28 DAMAGE]" << endl;
+				}
+				if (weapon.compare("War") != 0 && level > 5)
+				{
+					cout << "| Tome of Eternity [75 Kol] [18-36 DAMAGE]" << endl;
+				}
 			}
 			if (playerOccupation.compare("Assassin") == 0)
 			{
@@ -224,7 +265,15 @@ void npcGenerator(int npc)
 				cout << "| You can choose from the following weapons to buy!" << endl << endl;
 				if (weapon.compare("Copper Daggers") != 0)
 				{
-					cout << "1.) Copper Daggers [20 Kol] [8-16 DAMAGE]" << endl;
+					cout << "| Copper Daggers [20 Kol] [8-16 DAMAGE]" << endl;
+				}
+				if (weapon.compare("Iron Daggers") != 0 && level > 3)
+				{
+					cout << "| Iron Daggers [50 Kol] [12-20 DAMAGE]" << endl;
+				}
+				if (weapon.compare("Demon Daggers") != 0 && level > 5)
+				{
+					cout << "| Demon Daggers [75 Kol] [18-28 DAMAGE]" << endl;
 				}
 
 			}
@@ -262,9 +311,16 @@ void npcGenerator(int npc)
 				cout << "| You can choose from the following armor sets to buy!" << endl << endl;
 				if (armor.compare("Copper Armor") != 0)
 				{
-					cout << "1.) Copper Armor [20 Kol] [20% DMG REDUCTION]" << endl;
+					cout << "| Copper Armor [20 Kol] [20% DMG REDUCTION]" << endl;
 				}
-
+				if (armor.compare("Iron Armor") != 0 && level >= 3)
+				{
+					cout << "| Iron Armor [45 Kol] [30% DMG REDUCTION]" << endl;
+				}
+				if (armor.compare("Samurai Armor") != 0 && level >= 5)
+				{
+					cout << "| Samurai Armor [60 Kol] [35% DMG REDUCTION] [20% MONSTER MISS CHANCE]" << endl;
+				}
 			}
 			if (playerOccupation.compare("Mage") == 0)
 			{
@@ -272,9 +328,16 @@ void npcGenerator(int npc)
 				cout << "| You can choose from the following armor sets to buy!" << endl << endl;
 				if (armor.compare("Leather Robe") != 0)
 				{
-					cout << "1.) Leather Robe [20 Kol] [15% PLAYER DAMAGE] [+10 MANA]" << endl;
+					cout << "| Leather Robe [20 Kol] [15% PLAYER DAMAGE] [+10 MANA]" << endl;
 				}
-
+				if (armor.compare("Silk Woven Robe") != 0 && level >= 3)
+				{
+					cout << "| Silk Woven Robe [45 Kol] [20% PLAYER DAMAGE] [+30 MANA]" << endl;
+				}
+				if (armor.compare("Samurai Armor") != 0 && level >= 5)
+				{
+					cout << "| Samurai Armor [60 Kol] [25% PLAYER DAMAGE] [10% DMG REDUCTION] [+50 MANA]" << endl;
+				}
 			}
 			if (playerOccupation.compare("Assassin") == 0)
 			{
@@ -282,9 +345,16 @@ void npcGenerator(int npc)
 				cout << "| You can choose from the following weapons to buy!" << endl << endl;
 				if (armor.compare("Wolf Hide"))
 				{
-					cout << "1.) Wolf Hide [20 Kol] [50% MONSTER MISS CHANCE]" << endl;
+					cout << "| Wolf Hide [20 Kol] [50% MONSTER MISS CHANCE]" << endl;
 				}
-
+				if (armor.compare("Skeleton Bone Armor") != 0 && level >= 3)
+				{
+					cout << "| Skeleton Bone Armor [45 Kol] [60% MONSTER MISS CHANCE]" << endl;
+				}
+				if (armor.compare("Ninja Outfit") != 0 && level >= 5)
+				{
+					cout << "| Ninja Outfit [60 Kol] [70% MONSTER MISS CHANCE] [5% DMG REDUCTION]" << endl;
+				}
 			}
 
 			cout << endl;
