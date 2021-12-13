@@ -1,5 +1,7 @@
 #include "functions.h"
 
+// All of the different area and game windows
+
 void masadoraGameWindow()
 {
 

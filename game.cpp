@@ -6,6 +6,8 @@
 #include "functions.h"
 using namespace std;
 
+// Global Variables
+
 string inventory[10];
 string weapon = "Fist";
 string armor = " ";
@@ -35,6 +37,12 @@ bool respawn = FALSE;
 int main()
 {
 
+	MessageBox(nullptr, TEXT("Welcome to 'The Typical Isekai'!"), TEXT("The Typical Isekai"), MB_OK);
+	MessageBox(nullptr, TEXT("If you need any help, you can check the commands by typing help!"), TEXT("The Typical Isekai"), MB_OK);
+
+	srand(time(NULL)); // For Randomizer
+
+	// Setting Game Window
 	LPCWSTR a = L"The Typical Isekai";
 	LPCSTR b = "The Typical Isekai";
 	SetConsoleTitle(a);
@@ -45,10 +53,6 @@ int main()
 	GetWindowRect(console, &r);
 	MoveWindow(console, r.left, r.top, 1280, 720, TRUE);
 	system("COLOR A5");
-
-	MessageBox(nullptr, TEXT("Welcome to 'The Typical Isekai'!"), TEXT("The Typical Isekai"), MB_OK);
-	MessageBox(nullptr, TEXT("If you need any help, you can check the commands by typing help!"), TEXT("The Typical Isekai"), MB_OK);
-	srand(time(NULL));
 
 	string input;
 
@@ -299,6 +303,7 @@ int main()
 			if (input.compare("go into potion shop") == 0)
 			{
 				townShops(1);
+				masadoraGameWindow();
 			}
 			if (input.compare("go north") == 0)
 			{
@@ -801,6 +806,7 @@ int main()
 			if (input.compare("go into weapon shop") == 0)
 			{
 				townShops(2);
+				masadoraGameWindow();
 			}
 			else if (input.compare("go west") == 0)
 			{
@@ -834,6 +840,7 @@ int main()
 			if (input.compare("go into armor shop") == 0)
 			{
 				townShops(3);
+				masadoraGameWindow();
 			}
 			else if (input.compare("go east") == 0)
 			{
@@ -1056,6 +1063,8 @@ int main()
 				area = 34;
 			}
 
+			break;
+
 		case 33:
 
 			monsterGenerator(3);
@@ -1078,6 +1087,8 @@ int main()
 			{
 				area = 34;
 			}
+
+			break;
 
 		case 34:
 
@@ -1592,7 +1603,7 @@ int main()
 			break;
 		}
 
-	} while (input.compare("quit") != 0 && lives != 0);
+	} while (input.compare("quit") != 0 && lives != 0); // End Do While Loop when player types "quit" or when lives = 0
 
 	if (input.compare("quit") == 0)
 	{

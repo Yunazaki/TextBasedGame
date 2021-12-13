@@ -1,6 +1,6 @@
 #include "functions.h"
 
-void commands(string input)
+void commands(string input) // Calling all of the command functions
 {
 
 	if (input.compare("inventory") == 0)
@@ -31,10 +31,17 @@ void commands(string input)
 		system("pause");
 		cout << "-----------------------------------------------" << endl;
 	}
+	if (input.compare("health potion") == 0)
+	{
+		healthPotion();
+		cout << endl;
+		system("pause");
+		cout << "-----------------------------------------------" << endl;
+	}
 
 }
 
-void checkInventory()
+void checkInventory() // Prints inventory
 {
 
 	cout << "Here is your Inventory: \n\n";
@@ -53,7 +60,7 @@ void checkInventory()
 	cout << endl;
 }
 
-void checkQuest()
+void checkQuest() // Check the current quest the player has
 {
 
 	string input;
@@ -83,7 +90,7 @@ void checkQuest()
 	}
 }
 
-void help()
+void help() // Help function to assist player
 {
 
 	cout << endl;
@@ -91,6 +98,7 @@ void help()
 	cout << "| go (direction)" << endl;
 	cout << "| go through (something)" << endl;
 	cout << "| go into (place)" << endl;
+	cout << "| go to (place)" << endl;
 	cout << "| fight (something)" << endl;
 	cout << "| leave" << endl;
 	cout << "| inventory" << endl;
@@ -115,11 +123,38 @@ void help()
 
 }
 
-void map() {
+void map() 
+{
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 16; j++) {
 			cout << maps[i][j];
 		}
 		cout << endl;
+	}
+}
+
+void healthPotion() // Use health potion
+{
+	if (inventory[1].compare("Health Potion") == 0)
+	{
+		if (health > 50)
+		{
+			for (int i = health; i <= 100; i++) // Health Potion doesn't heal past 100
+			{
+				health++;
+			}
+			cout << "You've used up your health potion and healed back to 100 HP!" << endl;
+			inventory[1] = " ";
+		}
+		else
+		{
+			health += 50;
+			cout << "You've used up your health potion and healed 50 HP!" << endl;
+			inventory[1] = " ";
+		}
+	}
+	else
+	{
+		cout << "You don't have anything to heal with!" << endl;
 	}
 }

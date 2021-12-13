@@ -1,8 +1,9 @@
 #include "functions.h"
 
-void battle(int monsterhealth, string monster)
+void battle(int monsterhealth, string monster) // Battle Function
 {
 
+	// Player Stats
 	int playerDamage = rand() % 2 + 1;
 	int manaCost;
 	int monsterDamage;
@@ -13,8 +14,8 @@ void battle(int monsterhealth, string monster)
 	while (monsterhealth > 0 && health > 0)
 	{
 
-		int chance = rand() % 101;
-		int missChance = rand() % 101;
+		int chance = rand() % 101; // Decides who goes first
+		int missChance = rand() % 101; // The chance to miss an attack
 
 		cout << "-----------------------------------------------" << endl;
 		if (playerName == "Player") {
@@ -31,7 +32,7 @@ void battle(int monsterhealth, string monster)
 			}
 		}
 
-		if (weapon != "Fist")
+		if (weapon != "Fist") // Assigning damage based on weapon
 		{
 
 			if (weapon.compare("Wooden Sword") == 0)
@@ -83,6 +84,8 @@ void battle(int monsterhealth, string monster)
 
 		}
 
+		// Assigning monster damage and miss chance
+
 		if (monster.compare("Slime") == 0)
 		{
 			monsterDamage = rand() % 5 + 1;
@@ -118,6 +121,12 @@ void battle(int monsterhealth, string monster)
 			monsterDamage = rand() % 5 + 1;
 			monsterMissChance = rand() % 101;
 		}
+		
+		if (monster.compare("Hellhound") == 0)
+		{
+			monsterDamage = rand() % 9 + 8;
+			monsterMissChance = rand() % 101;
+		}
 
 		if (monster.compare("Milim Nova") == 0)
 		{
@@ -131,7 +140,7 @@ void battle(int monsterhealth, string monster)
 			monsterMissChance = rand() % 101;
 		}
 
-		if (armor != " ")
+		if (armor != " ") // Assigning Armor Buffs
 		{
 			if (armor.compare("Copper Armor") == 0)
 			{
@@ -177,13 +186,13 @@ void battle(int monsterhealth, string monster)
 			}
 		}
 
-		if (barrier == TRUE)
+		if (barrier == TRUE) // Barrier feature
 		{
 			monsterDamage *= .8;
 			monsterMissChance * 1.1;
 		}
 
-		if (battleStart == 1)
+		if (battleStart == 1) // Player Starts First
 		{
 
 			cout << "> ";
@@ -214,6 +223,16 @@ void battle(int monsterhealth, string monster)
 						cout << "You slash the " << monster << " for " << playerDamage << " with your " << weapon << "." << endl << endl;
 						monsterhealth -= playerDamage;
 					}
+					else if (weapon.compare("Iron Sword") == 0)
+					{
+						cout << "You slash the " << monster << " for " << playerDamage << " with your " << weapon << "." << endl << endl;
+						monsterhealth -= playerDamage;
+					}
+					else if (weapon.compare("War") == 0)
+					{
+						cout << "You slash the " << monster << " for " << playerDamage << " with your " << weapon << "." << endl << endl;
+						monsterhealth -= playerDamage;
+					}
 				}
 				else if (playerOccupation.compare("Mage") == 0)
 				{
@@ -227,10 +246,32 @@ void battle(int monsterhealth, string monster)
 						monsterhealth -= playerDamage;
 						mana -= manaCost;
 					}
+					else if (weapon.compare("Tome of Stars") == 0)
+					{
+						cout << "You summon the light of stars on the " << monster << " using up " << manaCost << " mana doing " << playerDamage << " damage." << endl << endl;
+						monsterhealth -= playerDamage;
+						mana -= manaCost;
+					}
+					else if (weapon.compare("Tome of Eternity") == 0)
+					{
+						cout << "You use all elements on the " << monster << " using up " << manaCost << " mana doing " << playerDamage << " damage." << endl << endl;
+						monsterhealth -= playerDamage;
+						mana -= manaCost;
+					}
 				}
 				else if (playerOccupation.compare("Assassin") == 0)
 				{
 					if (weapon.compare("Copper Daggers") == 0)
+					{
+						cout << "You throw your " << weapon << " at the " << monster << " dealing " << playerDamage << "." << endl << endl;
+						monsterhealth -= playerDamage;
+					}
+					else if (weapon.compare("Iron Daggers") == 0)
+					{
+						cout << "You throw your " << weapon << " at the " << monster << " dealing " << playerDamage << "." << endl << endl;
+						monsterhealth -= playerDamage;
+					}
+					else if (weapon.compare("Demon Daggers") == 0)
 					{
 						cout << "You throw your " << weapon << " at the " << monster << " dealing " << playerDamage << "." << endl << endl;
 						monsterhealth -= playerDamage;
@@ -274,9 +315,21 @@ void battle(int monsterhealth, string monster)
 				{
 					if (inventory[1].compare("Health Potion") == 0)
 					{
-						health += 50;
-						cout << "You've used up your health potion and healed 50 HP!" << endl;
-						inventory[1] = " ";
+						if (health > 50)
+						{
+							for (int i = health; i <= 100; i++)
+							{
+								health++;
+							}
+							cout << "You've used up your health potion and healed back to 100 HP!" << endl;
+							inventory[1] = " ";
+						}
+						else
+						{
+							health += 50;
+							cout << "You've used up your health potion and healed 50 HP!" << endl;
+							inventory[1] = " ";
+						}
 					}
 					else
 					{
@@ -340,7 +393,7 @@ void battle(int monsterhealth, string monster)
 			}
 			system("pause");
 		}
-		if (battleStart == 2)
+		if (battleStart == 2) // Monster Starts First
 		{
 
 			if (monsterMissChance <= 20)
@@ -382,6 +435,16 @@ void battle(int monsterhealth, string monster)
 						cout << "You slash the " << monster << " for " << playerDamage << " with your " << weapon << "." << endl << endl;
 						monsterhealth -= playerDamage;
 					}
+					else if (weapon.compare("Iron Sword") == 0)
+					{
+						cout << "You slash the " << monster << " for " << playerDamage << " with your " << weapon << "." << endl << endl;
+						monsterhealth -= playerDamage;
+					}
+					else if (weapon.compare("War") == 0)
+					{
+						cout << "You slash the " << monster << " for " << playerDamage << " with your " << weapon << "." << endl << endl;
+						monsterhealth -= playerDamage;
+					}
 				}
 				else if (playerOccupation.compare("Mage") == 0)
 				{
@@ -395,10 +458,32 @@ void battle(int monsterhealth, string monster)
 						monsterhealth -= playerDamage;
 						mana -= manaCost;
 					}
+					else if (weapon.compare("Tome of Stars") == 0)
+					{
+						cout << "You summon the light of stars on the " << monster << " using up " << manaCost << " mana doing " << playerDamage << " damage." << endl << endl;
+						monsterhealth -= playerDamage;
+						mana -= manaCost;
+					}
+					else if (weapon.compare("Tome of Eternity") == 0)
+					{
+						cout << "You use all elements on the " << monster << " using up " << manaCost << " mana doing " << playerDamage << " damage." << endl << endl;
+						monsterhealth -= playerDamage;
+						mana -= manaCost;
+					}
 				}
 				else if (playerOccupation.compare("Assassin") == 0)
 				{
 					if (weapon.compare("Copper Daggers") == 0)
+					{
+						cout << "You throw your " << weapon << " at the " << monster << " dealing " << playerDamage << "." << endl << endl;
+						monsterhealth -= playerDamage;
+					}
+					else if (weapon.compare("Iron Daggers") == 0)
+					{
+						cout << "You throw your " << weapon << " at the " << monster << " dealing " << playerDamage << "." << endl << endl;
+						monsterhealth -= playerDamage;
+					}
+					else if (weapon.compare("Demon Daggers") == 0)
 					{
 						cout << "You throw your " << weapon << " at the " << monster << " dealing " << playerDamage << "." << endl << endl;
 						monsterhealth -= playerDamage;
@@ -442,9 +527,21 @@ void battle(int monsterhealth, string monster)
 				{
 					if (inventory[1].compare("Health Potion") == 0)
 					{
-						health += 50;
-						cout << "You've used up your health potion and healed 50 HP!" << endl;
-						inventory[1] = " ";
+						if (health > 50)
+						{
+							for (int i = health; i <= 100; i++)
+							{
+								health++;
+							}
+							cout << "You've used up your health potion and healed back to 100 HP!" << endl;
+							inventory[1] = " ";
+						}
+						else
+						{
+							health += 50;
+							cout << "You've used up your health potion and healed 50 HP!" << endl;
+							inventory[1] = " ";
+						}
 					}
 					else
 					{
@@ -499,7 +596,8 @@ void battle(int monsterhealth, string monster)
 		}
 	}
 
-	if (health <= 0) {
+	if (health <= 0) // Dies when health = 0
+	{
 		cout << "-----------------------------------------------" << endl;
 		PlaySoundA((LPCSTR)"./Sounds/death.WAV", NULL, SND_FILENAME | SND_ASYNC);
 		cout << "You died!" << endl;
@@ -523,7 +621,7 @@ void battle(int monsterhealth, string monster)
 		}
 	}
 
-	if (monsterhealth <= 0 && input.compare("run") != 0)
+	if (monsterhealth <= 0 && input.compare("run") != 0) // Gives items on monster defeat
 	{
 		cout << "-----------------------------------------------" << endl;
 		cout << "You defeated the " << monster << "!" << endl;
@@ -534,7 +632,7 @@ void battle(int monsterhealth, string monster)
 
 }
 
-void itemDropper(string monster)
+void itemDropper(string monster) // Controls all the monster drops
 {
 
 	int droprate = rand() % 101;
@@ -662,7 +760,7 @@ void itemDropper(string monster)
 	}
 }
 
-void monsterGenerator(int monster)
+void monsterGenerator(int monster) // Controls what monsters are called
 {
 
 	int num = rand() % 100 + 1;
@@ -717,7 +815,7 @@ void monsterGenerator(int monster)
 
 	}
 
-	if (monster == 7)
+	if (monster == 7 && num <= 30)
 	{
 		cout << "You've encountered a hellhound!" << endl << endl;
 		battle(80, "Hellhound");

@@ -1,5 +1,6 @@
 #pragma once
 
+// Holds the variables and functions to use across all the different files
 
 #include <iostream>
 #include <string>
@@ -58,6 +59,8 @@ void checkQuest();
 void help();
 
 void map();
+
+void healthPotion();
 
 void monsterGenerator(int);
 

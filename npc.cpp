@@ -1,5 +1,7 @@
 #include "functions.h"
 
+// Controls all of the different types of NPCs in the game
+
 void npcGenerator(int npc)
 {
 
@@ -122,6 +124,7 @@ void npcGenerator(int npc)
 
 		npcName = "Shuna";
 
+		PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
 		if (inventory[0].compare("Adventurers Card") != 0)
 		{
 			cout << "| NPC: " << npcName << endl;
@@ -338,9 +341,9 @@ void npcGenerator(int npc)
 				{
 					cout << "| Silk Woven Robe [45 Kol] [20% PLAYER DAMAGE] [+30 MANA]" << endl;
 				}
-				if (armor.compare("Samurai Armor") != 0 && level >= 5)
+				if (armor.compare("Gown of Ainz Ooal Gown") != 0 && level >= 5)
 				{
-					cout << "| Samurai Armor [60 Kol] [25% PLAYER DAMAGE] [10% DMG REDUCTION] [+50 MANA]" << endl;
+					cout << "| Gown of Ainz Ooal Gown [60 Kol] [25% PLAYER DAMAGE] [10% DMG REDUCTION] [+50 MANA]" << endl;
 				}
 			}
 			if (playerOccupation.compare("Assassin") == 0)
@@ -459,6 +462,69 @@ void npcGenerator(int npc)
 
 		}
 
+		break;
 
+	case 9:
+
+		npcName = "King Rimuru";
+
+		PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
+		cout << "| NPC: " << npcName << endl << endl;
+
+		cout << "| Hello there " << playerName << endl;
+		cout << "| Do you remember me?" << endl;
+		cout << "| I'm the one that has been guiding you everywhere you needed to go!" << endl;
+		
+		cout << endl;
+		system("pause");
+		cout << endl;
+
+		PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
+
+		cout << "| You've done a splendid job at completing the task the city has asked of you." << endl;
+		cout << "| And not only that. You ended the oppression of the Demon King, 'Anos Voldigoad'" << endl;
+		cout << "| We could never ask anything more of you hero." << endl;
+		cout << "| Please come and claim your reward." << endl;
+
+		cout << endl;
+		system("pause");
+		cout << endl;
+
+		cout << "You go towards King Rimuru as he carefully extracts a crown from one of his chest." << endl;
+		cout << "You bow down to the King and you puts the crown on top of your head." << endl;
+
+		cout << endl;
+		system("pause");
+		cout << endl;
+
+		cout << "Suddenly, as the crown has just been placed upon your head." << endl;
+		cout << "Time stops. And only you can move." << endl;
+		cout << "You hear a feminine voice coming closer and closer to you." << endl;
+
+		cout << endl;
+		system("pause");
+		cout << endl;
+
+		npcName = "Emilia";
+
+		cout << "| NPC: " << npcName << endl << endl;
+
+		PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
+		cout << "| My hero." << endl;
+		cout << "| You've done so well my hero." << endl;
+		cout << "| You can rest now." << endl;
+
+		cout << endl;
+		system("pause");
+		cout << endl;
+
+		cout << "Suddenly, you fall into a deep slumber." << endl;
+		cout << "Never to be woken up ever again." << endl;
+		cout << "But you don't feel pain, you feel relieved." << endl;
+		cout << "For some reason, the woman's voice, was the thing that you wanted the most." << endl;
+
+		cout << endl;
+		system("pause");
+		cout << endl;
 	}
 }

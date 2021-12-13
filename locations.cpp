@@ -1,6 +1,6 @@
 #include "functions.h"
 
-void adventurersGuild()
+void adventurersGuild() // Adventurers Guild 
 {
 	string input;
 	int room = 1;
@@ -187,7 +187,7 @@ void adventurersGuild()
 	} while (input.compare("leave") != 0 && lives > 0);
 }
 
-void tombOfNazarik(int killed)
+void tombOfNazarik(int killed) // Graveyard Tomb
 {
 
 	string input;
@@ -253,6 +253,10 @@ void tombOfNazarik(int killed)
 				if (input.compare("go east") == 0)
 				{
 					room = 2;
+				}
+				if (input.compare("leave") == 0)
+				{
+					room = 999;
 				}
 
 			}
@@ -335,7 +339,7 @@ void tombOfNazarik(int killed)
 
 }
 
-void castle()
+void castle() // Castle
 {
 
 	string input;
@@ -355,15 +359,50 @@ void castle()
 		switch (room)
 		{
 
+		case 1:
 
+			cout << "You've made it into the castle of Masadora.\n";
+
+			cout << endl;
+			cout << "Do you wish to go see the king at the Throne\n";
+			cout << "OR\n";
+			cout << "Go back outside\n";
+
+			cout << endl;
+			cout << "> ";
+			getline(cin, input);
+			cout << endl;
+
+			if (input.compare("go to throne") == 0)
+			{
+				room = 2;
+			}
+			if (input.compare("go outside") == 0)
+			{
+				room = 999;
+			}
+
+			break;
+
+		case 2:
+
+			npcGenerator(9);
+
+			MessageBox(nullptr, TEXT("You've made it to the end of the game! Thanks for Playing!"), TEXT("End"), MB_OK);
+			exit(0);
 
 		}
 
-	} while (input.compare("leave") != 0 && lives > 0);
+		if (room == 999)
+		{
+			break;
+		}
+
+	} while (health > 0 && lives > 0);
 
 }
 
-void underworld()
+void underworld() // Underworld
 {
 
 	string input;
@@ -508,9 +547,15 @@ void underworld()
 			cout << "OR\n";
 			cout << "You can go East or South\n";
 
+			cout << endl;
+			cout << "> ";
+			getline(cin, input);
+			cout << endl;
+
 			if (input.compare("go into potion shop") == 0)
 			{
 				townShops(1);
+				underworldGameWindow();
 			}
 			if (input.compare("go east") == 0)
 			{
@@ -601,7 +646,7 @@ void underworld()
 
 			cout << "You climb up the mountain of ashes.\n";
 
-			if (inventory[8].compare("Dragon Head") == 0)
+			if (inventory[8].compare("Dragon Head") != 0)
 			{
 				cout << "You see a dragon resting on the other side of the mountain.\n";
 				cout << "Will you dare contest the Dragon?\n";
@@ -619,7 +664,7 @@ void underworld()
 			getline(cin, input);
 			cout << endl;
 
-			if (input.compare("fight dragon") == 0)
+			if (input.compare("fight dragon") == 0 && inventory[8].compare("Dragon Head") == 0)
 			{
 				monsterGenerator(8);
 			}
@@ -723,7 +768,7 @@ void underworld()
 
 }
 
-void townShops(int shop)
+void townShops(int shop) // All of the shops
 {
 
 	string input;
@@ -1050,7 +1095,7 @@ void townShops(int shop)
 				{
 					if (kol >= 60)
 					{
-						armor = "Copper Armor";
+						armor = "Samurai Armor";
 						cout << "You bought " << armor << "!" << endl;
 						kol -= 60;
 						cout << "You have " << kol << " Kol left." << endl << endl;
@@ -1173,7 +1218,6 @@ void townShops(int shop)
 		if (input.compare("leave") == 0)
 		{
 			cout << "| Thanks! See you again!" << endl << endl;
-			masadoraGameWindow();
 		}
 
 	} while (input.compare("leave") != 0);
