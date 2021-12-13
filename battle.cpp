@@ -501,6 +501,7 @@ void battle(int monsterhealth, string monster)
 
 	if (health <= 0) {
 		cout << "-----------------------------------------------" << endl;
+		PlaySoundA((LPCSTR)"./Sounds/death.WAV", NULL, SND_FILENAME | SND_ASYNC);
 		cout << "You died!" << endl;
 		if (respawn == TRUE) {
 			cout << "You've have received the blessing of the statue." << endl;
@@ -513,6 +514,7 @@ void battle(int monsterhealth, string monster)
 		}
 		if (respawn == FALSE) {
 			lives = 0;
+			PlaySoundA((LPCSTR)"./Sounds/bruh.WAV", NULL, SND_FILENAME | SND_ASYNC);
 			if (lives == 0)
 			{
 				MessageBox(nullptr, TEXT("You have no more lives!"), TEXT("GAME OVER"), MB_OK);

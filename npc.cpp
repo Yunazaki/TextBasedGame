@@ -16,6 +16,7 @@ void npcGenerator(int npc)
 
 		if (chance < 50)
 		{
+			PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
 			if (playerOccupation == "Knight" || playerOccupation == "Mage" || playerOccupation == "Assassin")
 			{
 				cout << "| NPC: " << npcName << endl;
@@ -101,6 +102,7 @@ void npcGenerator(int npc)
 
 		npcName = "Shion";
 
+		PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
 		if (inventory[0].compare("Adventurers Card") != 0)
 		{
 			cout << "| NPC: " << npcName << endl;
@@ -205,6 +207,7 @@ void npcGenerator(int npc)
 
 		npcName = "Kaijin";
 
+		PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
 		cout << "| NPC: " << npcName << endl;
 
 		if (level == 1)
@@ -288,6 +291,7 @@ void npcGenerator(int npc)
 
 		npcName = "Yamato";
 
+		PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
 		cout << "| NPC: " << npcName << endl;
 
 		if (level == 1)
@@ -367,6 +371,7 @@ void npcGenerator(int npc)
 
 		npcName = "Shizue";
 
+		PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
 		cout << "| NPC: " << npcName << endl;
 		cout << "| Welcome to the Masadora Docks!" << endl;
 
@@ -412,6 +417,7 @@ void npcGenerator(int npc)
 
 		npcName = "Rigurd";
 
+		PlaySoundA((LPCSTR)"./Sounds/voice_sans.WAV", NULL, SND_FILENAME | SND_ASYNC);
 		cout << "| NPC: " << npcName << endl;
 
 		if (inventory[9].compare("Demon King Core") != 0)

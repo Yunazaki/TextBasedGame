@@ -46,7 +46,8 @@ int main()
 	MoveWindow(console, r.left, r.top, 1280, 720, TRUE);
 	system("COLOR A5");
 
-	MessageBox(nullptr, TEXT("Welcome to 'The Typical Isekai'!"), TEXT("Welcome!"), MB_OK);
+	MessageBox(nullptr, TEXT("Welcome to 'The Typical Isekai'!"), TEXT("The Typical Isekai"), MB_OK);
+	MessageBox(nullptr, TEXT("If you need any help, you can check the commands by typing help!"), TEXT("The Typical Isekai"), MB_OK);
 	srand(time(NULL));
 
 	string input;
@@ -97,6 +98,7 @@ int main()
 
 			if (input.compare("pick up wooden sword") == 0)
 			{
+				PlaySoundA((LPCSTR)"./Sounds/tuturu.WAV", NULL, SND_FILENAME | SND_ASYNC);
 				weapon = "Wooden Sword";
 				cout << "You picked up a " << weapon << "!" << endl
 					<< endl;
@@ -1506,10 +1508,12 @@ int main()
 					cout << "You look down at your hands and you start to see it melt.\n";
 					cout << "You start to lose consciousness.\n";
 
+					PlaySoundA((LPCSTR)"./Sounds/omaewamou.WAV", NULL, SND_FILENAME | SND_ASYNC);
 					cout << endl;
 					system("pause");
 					cout << endl;
 
+					PlaySoundA((LPCSTR)"./Sounds/nani.WAV", NULL, SND_FILENAME | SND_ASYNC);
 					cout << "Your body couldn't handle the tense condition and unfortunately, you died.\n";
 					if (respawn == TRUE)
 					{
@@ -1520,6 +1524,7 @@ int main()
 
 					if (health <= 0) {
 						cout << "-----------------------------------------------" << endl;
+						PlaySoundA((LPCSTR)"./Sounds/death.WAV", NULL, SND_FILENAME | SND_ASYNC);
 						cout << "You died!" << endl;
 						if (respawn == TRUE) {
 							cout << "You've have received the blessing of the statue." << endl;
@@ -1532,6 +1537,7 @@ int main()
 						}
 						if (respawn == FALSE) {
 							lives = 0;
+							PlaySoundA((LPCSTR)"./Sounds/bruh.WAV", NULL, SND_FILENAME | SND_ASYNC);
 							if (lives == 0)
 							{
 								MessageBox(nullptr, TEXT("You have no more lives!"), TEXT("GAME OVER"), MB_OK);
